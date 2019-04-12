@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Presenter.Views
 {
-    interface ITestForm : IView
+    public interface ITestForm : IView
     {
     }
 }

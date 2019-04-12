@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Presenter.Views
 {
-    interface IPreviewForm : IView
+    public interface IPreviewForm : IView
     {
     }
 }

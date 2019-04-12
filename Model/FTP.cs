@@ -48,17 +48,28 @@ namespace Model
             }
         }
 
-        public bool UploadXMLs()
+        public bool UpdateUploadXMLresult(Result res, string id)
         {
             try
             {
                 using (client = new FtpClient(host, port, user, password))
                 {
                     client.Connect();
-                    using (Stream fileStream = File.OpenRead(pathLocalXML))
+                    using (Stream fileStream = File.OpenWrite(pathLocalResult))
                     {
-                        client.Upload(fileStream, pathRemoteXML);
+                        client.Download(fileStream, pathRemoteResult);
                     }
+
+                    XDocument xdoc = XDocument.Load(pathLocalResult);
+                    xdoc.Element("Offers").Add(new XElement("Offer", new XAttribute("Code", id),
+                        new XAttribute("Theme1", res.r1.ToString()),
+                        new XAttribute("Theme2", res.r2.ToString()),
+                        new XAttribute("Theme3", res.r3.ToString()),
+                        new XAttribute("Theme4", res.r4.ToString()),
+                        new XAttribute("DateTimeTest", DateTime.Now.ToString("dd.MM.yyyy hh:mm"))
+                        ));
+                    xdoc.Save(pathLocalResult);
+
                     using (Stream fileStream = File.OpenRead(pathLocalResult))
                     {
                         client.Upload(fileStream, pathRemoteResult);

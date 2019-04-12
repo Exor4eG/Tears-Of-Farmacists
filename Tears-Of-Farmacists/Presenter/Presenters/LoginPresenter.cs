@@ -15,6 +15,12 @@ namespace Presenter.Presenters
         public LoginPresenter(ILoginForm view, Data d) : base(view)
         {
             data = d;
+            View.Login += View_Login;
+        }
+
+        private bool View_Login(string arg1, string arg2)
+        {
+            return data.Login(arg1, arg2);
         }
     }
     

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presenter.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Tears_Of_Farmacists.Forms
 {
-    public partial class PreviewForm : Form
+    public partial class PreviewForm : Form, IPreviewForm
     {
         public PreviewForm()
         {

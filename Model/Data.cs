@@ -12,24 +12,35 @@ namespace Model
     public class Data
     {
         public TestData testData;
-        public User user;
+        public User user = null;
         public Result curResult;
         FTP FTP = new FTP();
         XDocument export;
         XDocument results;
-        public bool downloaded = false;
+        public bool downloadedFiles = false;
+        public bool uploaded = false;
+        public int choose = 0;
 
         public async void DownloadAllAsync()
         {
-            downloaded = await Task.Run(()=> DownloadAll());
+            downloadedFiles = await Task.Run(() => DownloadAll());
+        }
+
+        public async void UploadXMLAsync()
+        {
+            uploaded = await Task.Run(() => UploadXML());
         }
 
         /// <summary>
         /// Загрузка всех файлов
         /// </summary>
-        private bool DownloadAll()
+        public bool DownloadAll()
         {
-           return DownloadDat() & DownloadXML();
+            if(DownloadDat() & DownloadXML())
+            {
+                downloadedFiles = true;
+            }
+            return downloadedFiles;
         }
 
         /// <summary>
@@ -42,15 +53,25 @@ namespace Model
         }
 
         /// <summary>
-        /// Апдейт XML файла с результатами после теста
+        /// Чтение XDoc обьекта с результатами и запись в объект юзера
         /// </summary>
-        public void UpdateXML()
+        public void ReadResults()
         {
-            // переделать
-
-            results.Save(@"Data\Results.xml");
+            foreach (XElement res in results.Element("Offers").Elements("Offer"))
+            {
+                XAttribute code = res.Attribute("Code");
+                if (code.Value == user.id)
+                {
+                    user.results.Add(new Result(
+                        res.Attribute("Theme1").Value,
+                        res.Attribute("Theme2").Value,
+                        res.Attribute("Theme3").Value,
+                        res.Attribute("Theme4").Value,
+                        res.Attribute("DateTimeTest").Value)
+                        );
+                }
+            }
         }
-
 
         /// <summary>
         /// Чтение dat файла
@@ -77,7 +98,7 @@ namespace Model
         }
 
         /// <summary>
-        /// Загрузка файла XML с SFTP 
+        /// Загрузка файла XML с FTP 
         /// </summary>
         public bool DownloadXML()
         {
@@ -93,14 +114,14 @@ namespace Model
         }
 
         /// <summary>
-        /// Выгрузка XML файла на SFTP
+        /// Выгрузка XML файла на FTP
         /// </summary>
         public bool UploadXML()
         {
             bool downloaded = false;
             for (int i = 0; i < 10; i++)
             {
-                downloaded = FTP.UploadXMLs();
+                downloaded = FTP.UpdateUploadXMLresult(curResult, user.id);
                 if (downloaded)
                     break;
                 Thread.Sleep(1000);
@@ -109,7 +130,7 @@ namespace Model
         }
 
         /// <summary>
-        /// Загрузка dat файла с SFTP
+        /// Загрузка dat файла с FTP
         /// </summary>
         public bool DownloadDat()
         {
@@ -125,7 +146,7 @@ namespace Model
         }
 
         /// <summary>
-        /// Выгрузка dat и xml файлов на SFTP
+        /// Выгрузка dat и xml файлов на FTP
         /// </summary>
         public bool UploadDat()
         {

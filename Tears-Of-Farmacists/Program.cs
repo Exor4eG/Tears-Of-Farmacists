@@ -16,7 +16,7 @@ namespace View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (Mutex myLock = new Mutex(false, "mydomain.com myprogramname"))
+            using (Mutex myLock = new Mutex(false, "TOF.com tears-of-farmacists"))
             {
                 if (myLock.WaitOne(3000, false))
                 {

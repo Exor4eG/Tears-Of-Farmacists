@@ -1,0 +1,11 @@
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\bin\Debug\Presenter.dll
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\bin\Debug\Presenter.pdb
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\bin\Debug\Model.dll
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\bin\Debug\FluentFTP.dll
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\bin\Debug\Model.pdb
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\bin\Debug\FluentFTP.xml
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\obj\Debug\Presenter.csprojAssemblyReference.cache
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\obj\Debug\Presenter.csproj.CoreCompileInputs.cache
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\obj\Debug\Presenter.csproj.CopyComplete
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\obj\Debug\Presenter.dll
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\Presenter\obj\Debug\Presenter.pdb

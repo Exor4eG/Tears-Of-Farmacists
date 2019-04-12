@@ -12,6 +12,7 @@ namespace Model
         {
             this.name = name;
             this.id = id;
+            results = new List<Result>();
         }
 
         /// <summary>

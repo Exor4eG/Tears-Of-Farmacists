@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Presenter.Views
 {
-    interface ILoginForm : IView
+    public interface ILoginForm : IView
     {
+        event Func<string, string, bool> Login;
     }
 }

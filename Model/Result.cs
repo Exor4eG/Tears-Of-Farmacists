@@ -2,12 +2,12 @@
 {
     public class Result
     {
-        string date;
-        public double r1;
-        public double r2;
-        public double r3;
-        public double r4;
-        public Result(double r1, double r2, double r3, double r4, string date)
+        public string date;
+        public string r1;
+        public string r2;
+        public string r3;
+        public string r4;
+        public Result(string r1, string r2, string r3, string r4, string date)
         {
             this.r1 = r1;
             this.r2 = r2;
