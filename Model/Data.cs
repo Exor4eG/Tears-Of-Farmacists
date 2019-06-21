@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
@@ -13,23 +14,11 @@ namespace Model
     {
         public TestData testData;
         public User user = null;
-        public Result curResult;
         FTP FTP = new FTP();
         XDocument export;
         XDocument results;
         public bool downloadedFiles = false;
-        public bool uploaded = false;
-        public int choose = 0;
 
-        public async void DownloadAllAsync()
-        {
-            downloadedFiles = await Task.Run(() => DownloadAll());
-        }
-
-        public async void UploadXMLAsync()
-        {
-            uploaded = await Task.Run(() => UploadXML());
-        }
 
         /// <summary>
         /// Загрузка всех файлов
@@ -116,17 +105,17 @@ namespace Model
         /// <summary>
         /// Выгрузка XML файла на FTP
         /// </summary>
-        public bool UploadXML()
+        public bool UploadXML(Result curResult)
         {
-            bool downloaded = false;
+            bool uploaded = false;
             for (int i = 0; i < 10; i++)
             {
-                downloaded = FTP.UpdateUploadXMLresult(curResult, user.id);
-                if (downloaded)
+                uploaded = FTP.UpdateUploadXMLresult(curResult, user.id);
+                if (uploaded)
                     break;
                 Thread.Sleep(1000);
             }
-            return downloaded;
+            return uploaded;
         }
 
         /// <summary>

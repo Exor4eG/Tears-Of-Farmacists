@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Presenter.Views
 {
@@ -12,7 +13,6 @@ namespace Presenter.Views
         event Func<List<string[]>> GetResults;
         event Func<string> GetTestTime;
         event Func<string> GetQCount;
-        event Action SetChooseOne;
-        event Action SetChooseTwo;
+        event Func<Form, object> StartTest;
     }
 }

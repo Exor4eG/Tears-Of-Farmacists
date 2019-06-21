@@ -17,14 +17,14 @@ namespace Tears_Of_Farmacists.Forms
         public MainForm()
         {
             InitializeComponent();
+            dataGridView1.RowHeadersVisible = false;
         }
 
         public event Func<string> GetInfo;
         public event Func<List<string[]>> GetResults;
         public event Func<string> GetTestTime;
         public event Func<string> GetQCount;
-        public event Action SetChooseOne;
-        public event Action SetChooseTwo;
+        public event Func<Form,object> StartTest;
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
@@ -37,6 +37,7 @@ namespace Tears_Of_Farmacists.Forms
 
         private void UpdateDGV()
         {
+            dataGridView1.Rows.Clear();
             foreach (var res in result)
             {
                 dataGridView1.Rows.Add(res);
@@ -46,14 +47,14 @@ namespace Tears_Of_Farmacists.Forms
 
         private void B_StartTest_Click(object sender, EventArgs e)
         {
-            SetChooseOne();
-            Close();
+            StartTest(new TestForm());
+            Hide();
         }
 
-        private void B_Intro_Click(object sender, EventArgs e)
+        private void MainForm_Activated(object sender, EventArgs e)
         {
-            SetChooseTwo();
-            Close();
+            result = GetResults();
+            UpdateDGV();
         }
     }
 }

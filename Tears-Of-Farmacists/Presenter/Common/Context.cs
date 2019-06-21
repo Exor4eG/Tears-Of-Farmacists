@@ -2,6 +2,7 @@
 using Presenter.Presenters;
 using Presenter.Views;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,21 +13,18 @@ namespace Presenter.Common
         Data data = null;
         private Form preview = null;
         private Form main = null;
-        private Form test = null;
         private Form login = null;
         Timer timer = new Timer();
 
-        public Context(Form preview, Form main, Form test, Form login)
+        public Context(Form preview, Form main, Form login)
         {
             data = new Data();
             base.MainForm = preview;
-            this.test = test;
             this.login = login;
             this.preview = preview;
             this.main = main;
             timer.Tick += new EventHandler(SplashTimeUp);
             data.DownloadAll();
-            //Task task = new Task(() =>data.DownloadAll());
             timer.Interval = 6000;
             timer.Enabled = true;
         }
@@ -71,24 +69,7 @@ namespace Presenter.Common
             }
             else if (sender is IMainForm)
             {
-                if (data.choose == 1)
-                {
-                    data.choose = 0;
-                    //старт теста
-                }
-                else if (data.choose == 2)
-                {
-                    data.choose = 0;
-                    //старт ознакомления
-                }
-                else
-                {
-                    base.OnMainFormClosed(sender, e);
-                }
-            }
-            else if (sender is ITestForm)
-            {
-                //дописать
+                    base.OnMainFormClosed(sender, e);   
             }
         }
     }

@@ -17,3 +17,5 @@ D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\View.csproj.CoreCo
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\View.csproj.CopyComplete
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears-Of-Farmacists.exe
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears-Of-Farmacists.pdb
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears_Of_Farmacists.Forms.TestForm.resources
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears_Of_Farmacists.Forms.LogViewForm.resources

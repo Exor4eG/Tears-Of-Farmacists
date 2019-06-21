@@ -40,7 +40,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.B_Intro = new System.Windows.Forms.Button();
             this.B_StartTest = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -169,10 +168,10 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.B_Intro, 0, 3);
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.B_StartTest, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
@@ -190,28 +189,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(241, 204);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // B_Intro
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.B_Intro, 2);
-            this.B_Intro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.B_Intro.Location = new System.Drawing.Point(10, 163);
-            this.B_Intro.Margin = new System.Windows.Forms.Padding(10);
-            this.B_Intro.Name = "B_Intro";
-            this.B_Intro.Size = new System.Drawing.Size(221, 31);
-            this.B_Intro.TabIndex = 5;
-            this.B_Intro.Text = "Ознакомительный запуск";
-            this.B_Intro.UseVisualStyleBackColor = true;
-            this.B_Intro.Click += new System.EventHandler(this.B_Intro_Click);
-            // 
             // B_StartTest
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.B_StartTest, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.B_StartTest, 3);
             this.B_StartTest.Cursor = System.Windows.Forms.Cursors.Default;
             this.B_StartTest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.B_StartTest.Location = new System.Drawing.Point(10, 112);
             this.B_StartTest.Margin = new System.Windows.Forms.Padding(10);
             this.B_StartTest.Name = "B_StartTest";
-            this.B_StartTest.Size = new System.Drawing.Size(221, 31);
+            this.tableLayoutPanel2.SetRowSpan(this.B_StartTest, 2);
+            this.B_StartTest.Size = new System.Drawing.Size(221, 82);
             this.B_StartTest.TabIndex = 4;
             this.B_StartTest.Text = "Начать тест";
             this.B_StartTest.UseVisualStyleBackColor = true;
@@ -248,7 +235,7 @@
             this.L_QCount.Location = new System.Drawing.Point(190, 10);
             this.L_QCount.Margin = new System.Windows.Forms.Padding(10);
             this.L_QCount.Name = "L_QCount";
-            this.L_QCount.Size = new System.Drawing.Size(41, 31);
+            this.L_QCount.Size = new System.Drawing.Size(40, 31);
             this.L_QCount.TabIndex = 8;
             this.L_QCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -259,7 +246,7 @@
             this.L_Time.Location = new System.Drawing.Point(190, 61);
             this.L_Time.Margin = new System.Windows.Forms.Padding(10);
             this.L_Time.Name = "L_Time";
-            this.L_Time.Size = new System.Drawing.Size(41, 31);
+            this.L_Time.Size = new System.Drawing.Size(40, 31);
             this.L_Time.TabIndex = 9;
             this.L_Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -273,6 +260,7 @@
             this.MinimumSize = new System.Drawing.Size(840, 500);
             this.Name = "MainForm";
             this.Text = "Главная";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -290,7 +278,6 @@
         private System.Windows.Forms.TextBox TB_Info;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button B_StartTest;
-        private System.Windows.Forms.Button B_Intro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

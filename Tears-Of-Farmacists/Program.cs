@@ -20,7 +20,7 @@ namespace View
             {
                 if (myLock.WaitOne(3000, false))
                 {
-                    ApplicationContext context = new Context(new PreviewForm(), new MainForm(), new TestForm(), new LoginForm());
+                    ApplicationContext context = new Context(new PreviewForm(), new MainForm(), new LoginForm());
                     Application.Run(context);
                 }
                 else

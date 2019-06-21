@@ -27,7 +27,7 @@ namespace Tears_Of_Farmacists.Forms
 
         private void B_Login_Click(object sender, EventArgs e)
         {
-            if(Login(TB_Login.Text, TB_Pass.Text))
+            if (TB_Login.Text != string.Empty && TB_Login.Text != ""&& Login(TB_Login.Text, TB_Pass.Text))
             {
                 Close();
             }
@@ -36,6 +36,15 @@ namespace Tears_Of_Farmacists.Forms
                 MessageBox.Show("Введены неверные данные", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TB_Pass.Text = String.Empty;
                 TB_Login.Text = String.Empty;
+            }
+        }
+
+
+        private void TB_Pass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                B_Login_Click(sender, e);
             }
         }
     }

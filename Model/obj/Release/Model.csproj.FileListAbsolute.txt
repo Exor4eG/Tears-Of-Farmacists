@@ -1,0 +1,9 @@
+D:\Projects\Tears-Of-Farmacists\Model\bin\Release\Model.dll
+D:\Projects\Tears-Of-Farmacists\Model\bin\Release\Model.pdb
+D:\Projects\Tears-Of-Farmacists\Model\bin\Release\FluentFTP.dll
+D:\Projects\Tears-Of-Farmacists\Model\bin\Release\FluentFTP.xml
+D:\Projects\Tears-Of-Farmacists\Model\obj\Release\Model.csprojAssemblyReference.cache
+D:\Projects\Tears-Of-Farmacists\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+D:\Projects\Tears-Of-Farmacists\Model\obj\Release\Model.csproj.CopyComplete
+D:\Projects\Tears-Of-Farmacists\Model\obj\Release\Model.dll
+D:\Projects\Tears-Of-Farmacists\Model\obj\Release\Model.pdb

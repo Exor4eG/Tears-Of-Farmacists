@@ -100,7 +100,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(476, 45);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Введите учётные данные фармаси для авторизации";
+            this.label1.Text = "Введите учётные данные Farmacy для авторизации";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TB_Login
@@ -120,8 +120,10 @@
             this.TB_Pass.Location = new System.Drawing.Point(154, 100);
             this.TB_Pass.Margin = new System.Windows.Forms.Padding(10);
             this.TB_Pass.Name = "TB_Pass";
+            this.TB_Pass.PasswordChar = '*';
             this.TB_Pass.Size = new System.Drawing.Size(318, 22);
             this.TB_Pass.TabIndex = 2;
+            this.TB_Pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_Pass_KeyDown);
             // 
             // B_Login
             // 
