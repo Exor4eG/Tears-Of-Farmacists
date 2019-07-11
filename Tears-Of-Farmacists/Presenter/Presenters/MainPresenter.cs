@@ -22,6 +22,18 @@ namespace Presenter.Presenters
             View.GetQCount += View_GetQCount;
             View.GetTestTime += View_GetTestTime;
             View.StartTest += View_StartTest;
+            View.GetFontSize += View_GetFontSize;
+            View.SetFontSize += View_SetFontSize;
+        }
+
+        private void View_SetFontSize(int fontSize)
+        {
+            data.SaveFontSize(fontSize);
+        }
+
+        private int View_GetFontSize()
+        {
+            return data.FontSize;
         }
 
         private object View_StartTest(Form test)
@@ -48,8 +60,7 @@ namespace Presenter.Presenters
 
         private string View_GetTestTime()
         {
-            double time = (double)data.testData.Setting.Time / (double)60;
-            return time.ToString();
+            return data.testData.Setting.Time.ToString();
         }
 
         private string View_GetQCount()

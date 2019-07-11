@@ -18,7 +18,29 @@ namespace Model
         XDocument export;
         XDocument results;
         public bool downloadedFiles = false;
+        public int FontSize;
 
+        public Data()
+        {
+            try
+            {
+                XDocument xdoc = XDocument.Load(Path.Combine(Environment.CurrentDirectory, @"Data\Setting.xml"));
+                XElement setting = xdoc.Element("Setting").Element("Window");
+                FontSize = Convert.ToInt32(setting.Attribute("Fsize").Value);
+            }
+            catch
+            {
+                FontSize = 8;
+            }
+        }
+
+        public void SaveFontSize(int fontSize)
+        {
+            XDocument xdoc = XDocument.Load(Path.Combine(Environment.CurrentDirectory, @"Data\Setting.xml"));
+            XElement setting = xdoc.Element("Setting").Element("Window");
+            setting.Attribute("Fsize").Value = fontSize.ToString();
+            xdoc.Save(Path.Combine(Environment.CurrentDirectory, @"Data\Setting.xml"));
+        }
 
         /// <summary>
         /// Загрузка всех файлов
@@ -135,7 +157,7 @@ namespace Model
         }
 
         /// <summary>
-        /// Выгрузка dat и xml файлов на FTP
+        /// Выгрузка dat файла на FTP
         /// </summary>
         public bool UploadDat()
         {

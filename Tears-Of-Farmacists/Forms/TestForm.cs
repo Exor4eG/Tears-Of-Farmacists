@@ -20,10 +20,21 @@ namespace Tears_Of_Farmacists.Forms
         public event Func<int> Start;
         private Timer timer = new Timer();
         private TimeSpan time;
-        public TestForm()
+        private int font;
+        private int qCount;
+        private int count = 1;
+        private Answer[] answersList;
+        public TestForm(int font, int qCount)
         {
             InitializeComponent();
             timer.Tick += new EventHandler(timer_Tick);
+            this.font = font;
+            this.qCount = qCount;
+            foreach (Control c in Controls)
+            {
+                c.Font = new Font("Microsoft Sans Serif", font);
+            }
+            answersList = new Answer[] { new Answer(TB_Answer1, RB_Var1), new Answer(TB_Answer2, RB_Var2), new Answer(TB_Answer3, RB_Var3), new Answer(TB_Answer4, RB_Var4) };
         }
 
         private void TestForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -45,23 +56,24 @@ namespace Tears_Of_Farmacists.Forms
 
         private void TestForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            CloseTest(new LogViewForm());
+            CloseTest(new LogViewForm(font));
         }
 
 
         private void B_Confirm_Click(object sender, EventArgs e)
         {
             int answer = 0;
-            if (RB_Var1.Checked)
+            if (answersList[0].rb.Checked)
                 answer = 1;
-            else if (RB_Var2.Checked)
+            else if (answersList[1].rb.Checked)
                 answer = 2;
-            else if (RB_Var3.Checked)
+            else if (answersList[2].rb.Checked)
                 answer = 3;
-            else if (RB_Var4.Checked)
+            else if (answersList[3].rb.Checked)
                 answer = 4;
             ShowTrue(answer);
             requestResult = GetNextQuestion(answer);
+            count++;
             Delay(1500, (o, a) => RefreshView());
         }
 
@@ -78,22 +90,22 @@ namespace Tears_Of_Farmacists.Forms
             if (requestResult.IdTrueAnswer != ans - 1)
             {
                 if (ans == 1)
-                    TB_Answer1.BackColor = Color.IndianRed;
+                    answersList[0].tb.BackColor = Color.IndianRed;
                 else if (ans == 2)
-                    TB_Answer2.BackColor = Color.IndianRed;
+                    answersList[1].tb.BackColor = Color.IndianRed;
                 else if (ans == 3)
-                    TB_Answer3.BackColor = Color.IndianRed;
+                    answersList[2].tb.BackColor = Color.IndianRed;
                 else if (ans == 4)
-                    TB_Answer4.BackColor = Color.IndianRed;
+                    answersList[3].tb.BackColor = Color.IndianRed;
             }
             if (requestResult.IdTrueAnswer == 0)
-                TB_Answer1.BackColor = Color.LightGreen;
+                answersList[0].tb.BackColor = Color.LightGreen;
             else if (requestResult.IdTrueAnswer == 1)
-                TB_Answer2.BackColor = Color.LightGreen;
+                answersList[1].tb.BackColor = Color.LightGreen;
             else if (requestResult.IdTrueAnswer == 2)
-                TB_Answer3.BackColor = Color.LightGreen;
+                answersList[2].tb.BackColor = Color.LightGreen;
             else if (requestResult.IdTrueAnswer == 3)
-                TB_Answer4.BackColor = Color.LightGreen;
+                answersList[3].tb.BackColor = Color.LightGreen;
         }
 
         private void RefreshView()
@@ -106,12 +118,14 @@ namespace Tears_Of_Farmacists.Forms
             }
             else
             {
-                L_Theme.Text = requestResult.Theme;
+                L_Q.Text = "Вопрос: "+ count + "/" + qCount;
+                Mix();
+                L_T.Text = "Тема: "+requestResult.Theme;
                 TB_Question.Text = requestResult.Question;
-                TB_Answer1.Text = requestResult.Answer1;
-                TB_Answer2.Text = requestResult.Answer2;
-                TB_Answer3.Text = requestResult.Answer3;
-                TB_Answer4.Text = requestResult.Answer4;
+                answersList[0].tb.Text = requestResult.Answer1;
+                answersList[1].tb.Text = requestResult.Answer2;
+                answersList[2].tb.Text = requestResult.Answer3;
+                answersList[3].tb.Text = requestResult.Answer4;
                 B_Confirm.Enabled = false;
                 RB_Var1.Checked = RB_Var2.Checked = RB_Var3.Checked = RB_Var4.Checked = false;
                 TB_Answer1.BackColor = Color.Empty;
@@ -160,6 +174,26 @@ namespace Tears_Of_Farmacists.Forms
                 Close();
             }
         }
-
+        private class Answer
+        {
+            public TextBox tb { get; }
+            public RadioButton rb { get; }
+            public Answer(TextBox tb, RadioButton rb)
+            {
+                this.tb = tb;
+                this.rb = rb;
+            }
+        }
+        private void Mix()
+        {
+            Random r = new Random();
+            for (int i = answersList.Length - 1; i >= 1; i--)
+            {
+                int j = r.Next(i + 1);
+                var temp = answersList[j];
+                answersList[j] = answersList[i];
+                answersList[i] = temp;
+            }
+        }
     }
 }

@@ -37,7 +37,6 @@ namespace Model
                 port = Convert.ToInt32(setting.Attribute("Port").Value);
                 user = setting.Attribute("Username").Value;
                 password = setting.Attribute("Password").Value;
-
             }
             catch
             {
@@ -55,6 +54,7 @@ namespace Model
                 using (client = new FtpClient(host, port, user, password))
                 {
                     client.Connect();
+                    File.Delete(pathLocalResult);
                     using (Stream fileStream = File.OpenWrite(pathLocalResult))
                     {
                         client.Download(fileStream, pathRemoteResult);
@@ -111,6 +111,8 @@ namespace Model
             {
                 using (client = new FtpClient(host, port, user, password))
                 {
+                    File.Delete(pathLocalResult);
+                    File.Delete(pathLocalXML);
                     client.Connect();
                     using (Stream fileStream = File.OpenWrite(pathLocalXML))
                     {

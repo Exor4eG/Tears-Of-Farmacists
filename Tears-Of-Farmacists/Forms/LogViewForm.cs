@@ -18,9 +18,11 @@ namespace Tears_Of_Farmacists.Forms
         public event Action CloseLog;
         public event Func<List<string[]>> GetData;
         public event Func<Result> GetResult;
-        public LogViewForm()
+        public LogViewForm(int font)
         {
             InitializeComponent();
+            foreach (Control c in Controls)
+                c.Font = new Font("Microsoft Sans Serif", font);
         }
 
         private void LogViewForm_FormClosed(object sender, FormClosedEventArgs e)

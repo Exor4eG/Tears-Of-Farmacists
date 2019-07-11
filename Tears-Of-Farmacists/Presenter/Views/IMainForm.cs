@@ -14,5 +14,7 @@ namespace Presenter.Views
         event Func<string> GetTestTime;
         event Func<string> GetQCount;
         event Func<Form, object> StartTest;
+        event Func<int> GetFontSize;
+        event Action<int> SetFontSize;
     }
 }

@@ -14,6 +14,7 @@ namespace Tears_Of_Farmacists.Forms
     public partial class MainForm : Form, IMainForm
     {
         List<string[]> result;
+        int font;
         public MainForm()
         {
             InitializeComponent();
@@ -24,7 +25,9 @@ namespace Tears_Of_Farmacists.Forms
         public event Func<List<string[]>> GetResults;
         public event Func<string> GetTestTime;
         public event Func<string> GetQCount;
-        public event Func<Form,object> StartTest;
+        public event Func<Form, object> StartTest;
+        public event Func<int> GetFontSize;
+        public event Action<int> SetFontSize;
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
@@ -33,6 +36,8 @@ namespace Tears_Of_Farmacists.Forms
             UpdateDGV();
             L_Time.Text = GetTestTime();
             L_QCount.Text = GetQCount();
+            font = GetFontSize();
+            ChangeFont();
         }
 
         private void UpdateDGV()
@@ -47,7 +52,8 @@ namespace Tears_Of_Farmacists.Forms
 
         private void B_StartTest_Click(object sender, EventArgs e)
         {
-            StartTest(new TestForm());
+            SetFontSize(font);
+            StartTest(new TestForm(font, Convert.ToInt32(GetQCount())));
             Hide();
         }
 
@@ -55,6 +61,35 @@ namespace Tears_Of_Farmacists.Forms
         {
             result = GetResults();
             UpdateDGV();
+        }
+
+        private void B_FontU_Click(object sender, EventArgs e)
+        {
+            if (font < 14)
+            {
+                font++;
+                ChangeFont();
+            }
+        }
+
+        private void B_FontD_Click(object sender, EventArgs e)
+        {
+            if (font > 7)
+            {
+                font--;
+                ChangeFont();
+            }
+        }
+        private void ChangeFont()
+        {
+            foreach (Control c in this.Controls)
+                    c.Font = new Font("Microsoft Sans Serif", font);
+            B_FontU.Font = B_FontD.Font = new Font("Microsoft Sans Serif", 8);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SetFontSize(font);
         }
     }
 }

@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogViewForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.L_T1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.L_T2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.L_T3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.L_T4 = new System.Windows.Forms.Label();
             this.Theme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Answer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrueAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.L_T4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.L_T3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.L_T2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.L_T1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -81,21 +81,55 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(868, 334);
             this.dataGridView1.TabIndex = 0;
             // 
+            // Theme
+            // 
+            this.Theme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Theme.HeaderText = "Тема";
+            this.Theme.MinimumWidth = 6;
+            this.Theme.Name = "Theme";
+            this.Theme.ReadOnly = true;
+            this.Theme.Width = 71;
+            // 
+            // Question
+            // 
+            this.Question.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Question.HeaderText = "Вопрос";
+            this.Question.MinimumWidth = 6;
+            this.Question.Name = "Question";
+            this.Question.ReadOnly = true;
+            // 
+            // Answer
+            // 
+            this.Answer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Answer.HeaderText = "Ваш ответ";
+            this.Answer.MinimumWidth = 6;
+            this.Answer.Name = "Answer";
+            this.Answer.ReadOnly = true;
+            // 
+            // TrueAnswer
+            // 
+            this.TrueAnswer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrueAnswer.HeaderText = "Верный ответ";
+            this.TrueAnswer.MinimumWidth = 6;
+            this.TrueAnswer.Name = "TrueAnswer";
+            this.TrueAnswer.ReadOnly = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 8;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel2.Controls.Add(this.L_T4, 7, 0);
             this.tableLayoutPanel2.Controls.Add(this.label7, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.L_T3, 5, 0);
@@ -109,9 +143,81 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(876, 59);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // L_T4
+            // 
+            this.L_T4.AutoSize = true;
+            this.L_T4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.L_T4.Location = new System.Drawing.Point(815, 0);
+            this.L_T4.Name = "L_T4";
+            this.L_T4.Size = new System.Drawing.Size(58, 59);
+            this.L_T4.TabIndex = 7;
+            this.L_T4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Location = new System.Drawing.Point(684, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 59);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "ИТ";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // L_T3
+            // 
+            this.L_T3.AutoSize = true;
+            this.L_T3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.L_T3.Location = new System.Drawing.Point(623, 0);
+            this.L_T3.Name = "L_T3";
+            this.L_T3.Size = new System.Drawing.Size(55, 59);
+            this.L_T3.TabIndex = 5;
+            this.L_T3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(457, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 59);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Маркетинг";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // L_T2
+            // 
+            this.L_T2.AutoSize = true;
+            this.L_T2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.L_T2.Location = new System.Drawing.Point(396, 0);
+            this.L_T2.Name = "L_T2";
+            this.L_T2.Size = new System.Drawing.Size(55, 59);
+            this.L_T2.TabIndex = 3;
+            this.L_T2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(230, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 59);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Менеджмент";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // L_T1
+            // 
+            this.L_T1.AutoSize = true;
+            this.L_T1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.L_T1.Location = new System.Drawing.Point(169, 0);
+            this.L_T1.Name = "L_T1";
+            this.L_T1.Size = new System.Drawing.Size(55, 59);
+            this.L_T1.TabIndex = 1;
+            this.L_T1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -119,112 +225,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 59);
+            this.label1.Size = new System.Drawing.Size(160, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "Бухгалтерия";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // L_T1
-            // 
-            this.L_T1.AutoSize = true;
-            this.L_T1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.L_T1.Location = new System.Drawing.Point(112, 0);
-            this.L_T1.Name = "L_T1";
-            this.L_T1.Size = new System.Drawing.Size(103, 59);
-            this.L_T1.TabIndex = 1;
-            this.L_T1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(221, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 59);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Менеджмент";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // L_T2
-            // 
-            this.L_T2.AutoSize = true;
-            this.L_T2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.L_T2.Location = new System.Drawing.Point(330, 0);
-            this.L_T2.Name = "L_T2";
-            this.L_T2.Size = new System.Drawing.Size(103, 59);
-            this.L_T2.TabIndex = 3;
-            this.L_T2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(439, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 59);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Маркетинг";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // L_T3
-            // 
-            this.L_T3.AutoSize = true;
-            this.L_T3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.L_T3.Location = new System.Drawing.Point(548, 0);
-            this.L_T3.Name = "L_T3";
-            this.L_T3.Size = new System.Drawing.Size(103, 59);
-            this.L_T3.TabIndex = 5;
-            this.L_T3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(657, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 59);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "ИТ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // L_T4
-            // 
-            this.L_T4.AutoSize = true;
-            this.L_T4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.L_T4.Location = new System.Drawing.Point(766, 0);
-            this.L_T4.Name = "L_T4";
-            this.L_T4.Size = new System.Drawing.Size(107, 59);
-            this.L_T4.TabIndex = 7;
-            this.L_T4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Theme
-            // 
-            this.Theme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Theme.HeaderText = "Тема";
-            this.Theme.Name = "Theme";
-            this.Theme.ReadOnly = true;
-            this.Theme.Width = 71;
-            // 
-            // Question
-            // 
-            this.Question.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Question.HeaderText = "Вопрос";
-            this.Question.Name = "Question";
-            this.Question.ReadOnly = true;
-            // 
-            // Answer
-            // 
-            this.Answer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Answer.HeaderText = "Ваш ответ";
-            this.Answer.Name = "Answer";
-            this.Answer.ReadOnly = true;
-            // 
-            // TrueAnswer
-            // 
-            this.TrueAnswer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TrueAnswer.HeaderText = "Верный ответ";
-            this.TrueAnswer.Name = "TrueAnswer";
-            this.TrueAnswer.ReadOnly = true;
             // 
             // LogViewForm
             // 
