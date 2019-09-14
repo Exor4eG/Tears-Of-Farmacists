@@ -24,6 +24,14 @@ namespace Presenter.Presenters
             View.StartTest += View_StartTest;
             View.GetFontSize += View_GetFontSize;
             View.SetFontSize += View_SetFontSize;
+            View.OpenTraining += View_OpenTraining;
+        }
+
+        private void View_OpenTraining(Form trainingForm)
+        {
+            TrainingPresenter tp = new TrainingPresenter((ITrainingForm)trainingForm, data);
+            trainingForm.Show();
+            tp.Close += Lvp_Close;
         }
 
         private void View_SetFontSize(int fontSize)

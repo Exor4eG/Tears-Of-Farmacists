@@ -19,3 +19,4 @@ D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears-Of-Farmacist
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears-Of-Farmacists.pdb
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears_Of_Farmacists.Forms.TestForm.resources
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears_Of_Farmacists.Forms.LogViewForm.resources
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Debug\Tears_Of_Farmacists.Forms.TrainingForm.resources

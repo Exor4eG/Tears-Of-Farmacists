@@ -28,6 +28,7 @@ namespace Tears_Of_Farmacists.Forms
         public event Func<Form, object> StartTest;
         public event Func<int> GetFontSize;
         public event Action<int> SetFontSize;
+        public event Action<Form> OpenTraining;
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
@@ -91,5 +92,12 @@ namespace Tears_Of_Farmacists.Forms
         {
             SetFontSize(font);
         }
+
+        private void B_Learn_Click(object sender, EventArgs e)
+        {
+            OpenTraining(new TrainingForm());
+            Hide();
+        }
+
     }
 }

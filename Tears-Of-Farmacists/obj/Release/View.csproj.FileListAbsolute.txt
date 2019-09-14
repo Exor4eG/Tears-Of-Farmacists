@@ -19,3 +19,4 @@ D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Release\View.csproj.Core
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Release\View.csproj.CopyComplete
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Release\Tears-Of-Farmacists.exe
 D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Release\Tears-Of-Farmacists.pdb
+D:\Projects\Tears-Of-Farmacists\Tears-Of-Farmacists\obj\Release\Tears_Of_Farmacists.Forms.TrainingForm.resources

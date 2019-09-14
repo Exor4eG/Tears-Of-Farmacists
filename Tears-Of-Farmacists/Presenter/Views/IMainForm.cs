@@ -16,5 +16,6 @@ namespace Presenter.Views
         event Func<Form, object> StartTest;
         event Func<int> GetFontSize;
         event Action<int> SetFontSize;
+        event Action<Form> OpenTraining;
     }
 }

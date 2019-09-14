@@ -49,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.B_FontU = new System.Windows.Forms.Button();
             this.B_FontD = new System.Windows.Forms.Button();
+            this.B_Learn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -184,11 +185,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.B_StartTest, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.B_StartTest, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.L_QCount, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.L_Time, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.B_Learn, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(578, 264);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -206,11 +208,10 @@
             this.tableLayoutPanel2.SetColumnSpan(this.B_StartTest, 3);
             this.B_StartTest.Cursor = System.Windows.Forms.Cursors.Default;
             this.B_StartTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.B_StartTest.Location = new System.Drawing.Point(10, 136);
+            this.B_StartTest.Location = new System.Drawing.Point(10, 199);
             this.B_StartTest.Margin = new System.Windows.Forms.Padding(10);
             this.B_StartTest.Name = "B_StartTest";
-            this.tableLayoutPanel2.SetRowSpan(this.B_StartTest, 2);
-            this.B_StartTest.Size = new System.Drawing.Size(221, 108);
+            this.B_StartTest.Size = new System.Drawing.Size(221, 45);
             this.B_StartTest.TabIndex = 4;
             this.B_StartTest.Text = "Начать тест";
             this.B_StartTest.UseVisualStyleBackColor = true;
@@ -315,6 +316,19 @@
             this.B_FontD.UseVisualStyleBackColor = true;
             this.B_FontD.Click += new System.EventHandler(this.B_FontD_Click);
             // 
+            // B_Learn
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.B_Learn, 3);
+            this.B_Learn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.B_Learn.Location = new System.Drawing.Point(10, 136);
+            this.B_Learn.Margin = new System.Windows.Forms.Padding(10);
+            this.B_Learn.Name = "B_Learn";
+            this.B_Learn.Size = new System.Drawing.Size(221, 43);
+            this.B_Learn.TabIndex = 10;
+            this.B_Learn.Text = "Методичка";
+            this.B_Learn.UseVisualStyleBackColor = true;
+            this.B_Learn.Click += new System.EventHandler(this.B_Learn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,5 +375,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button B_FontU;
         private System.Windows.Forms.Button B_FontD;
+        private System.Windows.Forms.Button B_Learn;
     }
 }
